@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGA - Certificate of Operation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f5f5f5; color: #1a1a2e; min-height: 100vh; }
+
+        /* Navbar */
+        .navbar {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 18px 60px; background: #fff; border-bottom: 1px solid #e5e5e5;
+        }
+        .navbar .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .navbar .logo-icon {
+            width: 48px; height: 48px; background: #1a2744; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 800; font-size: 14px; font-family: 'Playfair Display', serif;
+        }
+        .navbar .logo-text { font-size: 24px; font-weight: 800; color: #1a2744; letter-spacing: 2px; }
+        .navbar .logo-sub { font-size: 10px; color: #555; letter-spacing: 1px; }
+
+        /* Certificate Container */
+        .cert-wrapper {
+            max-width: 800px; margin: 60px auto; padding: 0 20px;
+        }
+        .cert-box {
+            background: #fff; border-radius: 12px; box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+            padding: 60px; position: relative; overflow: hidden;
+        }
+        .cert-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, #b8972f, #d4af37, #b8972f);
+        }
+
+        /* Header with logo */
+        .cert-header { text-align: center; margin-bottom: 40px; }
+        .cert-logo { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 30px; }
+        .cert-logo-icon {
+            width: 72px; height: 72px; background: #1a2744; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 800; font-size: 20px; font-family: 'Playfair Display', serif;
+        }
+        .cert-logo-text h2 { font-size: 36px; font-weight: 900; color: #1a2744; letter-spacing: 3px; }
+        .cert-logo-text p { font-size: 12px; color: #666; letter-spacing: 2px; font-weight: 500; }
+
+        .cert-title {
+            font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700;
+            color: #b8972f; margin-bottom: 10px;
+        }
+
+        /* Certificate Body */
+        .cert-body { font-size: 15px; line-height: 1.9; color: #444; margin-bottom: 30px; text-align: justify; }
+        .cert-body strong { color: #1a2744; font-weight: 700; }
+
+        /* Status Badge */
+        .status-row { margin: 30px 0; display: flex; align-items: center; gap: 12px; }
+        .status-badge {
+            display: inline-block; padding: 6px 20px; border-radius: 20px;
+            font-size: 13px; font-weight: 700; letter-spacing: 1px;
+        }
+        .status-badge.active { background: #e6f7ee; color: #1a5c38; }
+        .status-badge.inactive { background: #fde8e8; color: #c0392b; }
+
+        /* Seal */
+        .cert-seal { text-align: center; margin-top: 40px; }
+        .seal-badge {
+            display: inline-block; background: #1a5c38; color: #fff; padding: 24px 32px;
+            border-radius: 8px; text-align: center;
+        }
+        .seal-badge h3 { font-size: 36px; font-weight: 900; letter-spacing: 3px; }
+        .seal-badge p { font-size: 13px; font-weight: 600; margin-top: 4px; }
+
+        /* Error state */
+        .cert-error { text-align: center; padding: 80px 40px; }
+        .cert-error h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #c0392b; margin-bottom: 16px; }
+        .cert-error p { font-size: 15px; color: #666; line-height: 1.7; }
+
+        /* Loading */
+        .cert-loading { text-align: center; padding: 80px 40px; }
+        .spinner {
+            width: 40px; height: 40px; border: 4px solid #e5e5e5; border-top-color: #b8972f;
+            border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 20px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Table info */
+        .info-table { margin: 30px 0; border-top: 1px solid #eee; }
+        .info-row { display: flex; border-bottom: 1px solid #eee; padding: 16px 0; }
+        .info-label { width: 200px; font-size: 13px; font-weight: 700; color: #1a2744; flex-shrink: 0; }
+        .info-value { font-size: 14px; color: #444; font-weight: 500; }
+        .info-value.highlight { color: #1a5c38; font-weight: 700; }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 14px 20px; }
+            .cert-box { padding: 30px 20px; }
+            .cert-logo-text h2 { font-size: 28px; }
+            .cert-title { font-size: 22px; }
+            .info-row { flex-direction: column; gap: 4px; }
+            .info-label { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="/" class="logo">
+            <div class="logo-icon">CGA</div>
+            <div>
+                <div class="logo-text">CGA</div>
+                <div class="logo-sub">Curaçao Gaming Authority</div>
+            </div>
+        </a>
+    </header>
+
+    <div class="cert-wrapper">
+        <div class="cert-box">
+            <!-- Loading State -->
+            <div id="loading" class="cert-loading">
+                <div class="spinner"></div>
+                <p>Verifying certificate...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="error" class="cert-error" style="display:none;">
+                <h2>Certificate Not Found</h2>
+                <p>The certificate ID provided is invalid or has expired.<br>Please check the URL and try again.</p>
+            </div>
+
+            <!-- Certificate Content -->
+            <div id="certificate" style="display:none;">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <div class="cert-logo-icon">CGA</div>
+                        <div class="cert-logo-text">
+                            <h2>CGA</h2>
+                            <p>Curaçao Gaming Authority</p>
+                        </div>
+                    </div>
+                    <div class="cert-title">Certificate of Operation</div>
+                </div>
+
+                <div class="cert-body">
+                    This is to certify that <strong id="certDomain"></strong> is operated by
+                    <strong id="certCompany"></strong>, a company incorporated under the laws of Curaçao
+                    with Company Number <strong id="certCompanyNum"></strong> and licensed by the
+                    Curaçao Gaming Authority to offer games of chance under license number
+                    <strong id="certLicense"></strong> in accordance with the National Ordinance on Games of Chance
+                    (Landsverordening op de kansspelen, P.B. 2024, no. 157).
+                </div>
+
+                <div class="status-row">
+                    <span>The license was granted on <strong id="certDate"></strong> and its current status is</span>
+                    <span id="certStatus" class="status-badge active">Active</span>
+                </div>
+
+                <div class="info-table">
+                    <div class="info-row">
+                        <div class="info-label">Company Name</div>
+                        <div class="info-value" id="infoCompany"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Address</div>
+                        <div class="info-value" id="infoAddress"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Contact Email</div>
+                        <div class="info-value" id="infoEmail"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Registered Website</div>
+                        <div class="info-value highlight" id="infoDomain"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">License Number</div>
+                        <div class="info-value" id="infoLicense"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Alternate Designation</div>
+                        <div class="info-value highlight" id="infoAlternate"></div>
+                    </div>
+                </div>
+
+                <div class="cert-seal">
+                    <div class="seal-badge">
+                        <h3>CGA</h3>
+                        <p>cert.cga.mba</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadCertificate() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+
+            if (!id) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                return;
+            }
+
+            try {
+                const res = await fetch('/data/customers.json');
+                const data = await res.json();
+                const customer = data[id];
+
+                if (!customer) {
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('error').style.display = 'block';
+                    return;
+                }
+
+                // Fill certificate data
+                document.getElementById('certDomain').textContent = customer.domain;
+                document.getElementById('certCompany').textContent = customer.companyName;
+                document.getElementById('certCompanyNum').textContent = customer.companyNumber;
+                document.getElementById('certLicense').textContent = customer.licenseNumber;
+                document.getElementById('certDate').textContent = customer.licenseDate;
+                
+                const statusBadge = document.getElementById('certStatus');
+                statusBadge.textContent = customer.status;
+                statusBadge.className = 'status-badge ' + (customer.status === 'Active' ? 'active' : 'inactive');
+
+                document.getElementById('infoCompany').textContent = customer.companyName;
+                document.getElementById('infoAddress').textContent = customer.address;
+                document.getElementById('infoEmail').textContent = customer.contactEmail;
+                document.getElementById('infoDomain').textContent = customer.domain;
+                document.getElementById('infoLicense').textContent = customer.licenseNumber;
+                document.getElementById('infoAlternate').textContent = customer.alternateDomain;
+
+                document.title = 'CGA - Certificate: ' + customer.domain;
+
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('certificate').style.display = 'block';
+            } catch (e) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+
+        loadCertificate();
+    </script>
+</body>
+</html>

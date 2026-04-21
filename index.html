@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGA - Curaçao Gaming Authority</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #fff; }
+        
+        /* Navbar */
+        .navbar {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 18px 60px; background: #fff; border-bottom: 1px solid #e5e5e5;
+        }
+        .navbar .logo { display: flex; align-items: center; gap: 12px; }
+        .navbar .logo-icon {
+            width: 48px; height: 48px; background: #1a2744; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 800; font-size: 14px; letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
+        }
+        .navbar .logo-text { font-size: 24px; font-weight: 800; color: #1a2744; letter-spacing: 2px; }
+        .navbar .logo-sub { font-size: 10px; color: #555; letter-spacing: 1px; }
+        .navbar nav a {
+            text-decoration: none; color: #1a2744; font-size: 13px; font-weight: 600;
+            letter-spacing: 2px; text-transform: uppercase; margin-left: 40px;
+        }
+        .navbar nav a:hover { color: #b8972f; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #b8972f 0%, #d4af37 40%, #c9a227 100%);
+            padding: 80px 60px; display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 40px;
+        }
+        .hero-left { max-width: 500px; }
+        .hero-left .tag {
+            font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+            color: rgba(255,255,255,0.8); margin-bottom: 16px; font-weight: 500;
+        }
+        .hero-left h1 {
+            font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700;
+            color: #fff; line-height: 1.2; margin-bottom: 20px;
+        }
+        .hero-left p { font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.7; margin-bottom: 28px; }
+        .hero-left .btn-contact {
+            display: inline-block; padding: 14px 32px; background: #1a2744; color: #fff;
+            text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 2px;
+            text-transform: uppercase; border-radius: 4px; transition: background 0.3s;
+        }
+        .hero-left .btn-contact:hover { background: #0d1a30; }
+        .hero-right { display: flex; gap: 24px; flex-wrap: wrap; }
+        .seal-card {
+            width: 200px; background: #fff; border-radius: 8px; overflow: hidden;
+            text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .seal-card .seal-top {
+            background: #1a5c38; padding: 30px 20px; color: #fff;
+        }
+        .seal-card .seal-top h2 { font-size: 42px; font-weight: 900; letter-spacing: 3px; }
+        .seal-card .seal-top p { font-size: 14px; font-weight: 600; margin-top: 4px; }
+        .seal-card .seal-bottom {
+            padding: 12px; font-size: 11px; color: #555; font-weight: 600;
+            letter-spacing: 1px; text-transform: uppercase;
+        }
+        .seal-card.b2b .seal-top { background: #1a2744; }
+
+        /* Principles */
+        .principles { padding: 80px 60px; max-width: 1200px; margin: 0 auto; }
+        .principles .tag {
+            font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+            color: #b8972f; margin-bottom: 12px; font-weight: 600;
+        }
+        .principles h2 {
+            font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700;
+            color: #1a2744; margin-bottom: 16px;
+        }
+        .principles > p { font-size: 15px; color: #666; line-height: 1.8; max-width: 700px; margin-bottom: 50px; }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+        .card {
+            background: #fff; border: 1px solid #e8e8e8; border-radius: 12px; padding: 32px 24px;
+            transition: box-shadow 0.3s;
+        }
+        .card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+        .card .icon {
+            width: 40px; height: 40px; background: #f0f4f8; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px; font-size: 18px; color: #1a2744;
+        }
+        .card h3 { font-size: 16px; font-weight: 700; color: #1a2744; margin-bottom: 12px; }
+        .card p { font-size: 13px; color: #777; line-height: 1.7; }
+
+        /* Footer */
+        .footer {
+            background: #1a2744; padding: 40px 60px; text-align: center;
+            color: rgba(255,255,255,0.6); font-size: 13px;
+        }
+        .footer a { color: #b8972f; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 14px 20px; }
+            .navbar nav a { margin-left: 20px; font-size: 11px; }
+            .hero { padding: 50px 20px; }
+            .hero-left h1 { font-size: 28px; }
+            .principles { padding: 50px 20px; }
+            .footer { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-icon">CGA</div>
+            <div>
+                <div class="logo-text">CGA</div>
+                <div class="logo-sub">Curaçao Gaming Authority</div>
+            </div>
+        </div>
+        <nav>
+            <a href="/">HOME</a>
+            <a href="#principles">CERTIFICATION POLICY</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-left">
+            <div class="tag">Online Gaming License Register</div>
+            <h1>Protecting Our Integrity</h1>
+            <p>Operators that are licensed under the Curaçao Gaming Authority need to adhere to stringent requirements.</p>
+            <a href="mailto:info@cga.mba" class="btn-contact">Contact Us</a>
+        </div>
+        <div class="hero-right">
+            <div class="seal-card">
+                <div class="seal-top">
+                    <h2>CGA</h2>
+                    <p>cert.cga.mba</p>
+                </div>
+                <div class="seal-bottom">B2C Certification Seal</div>
+            </div>
+            <div class="seal-card b2b">
+                <div class="seal-top">
+                    <h2>CGA</h2>
+                    <p>cert.cga.mba</p>
+                </div>
+                <div class="seal-bottom">B2B Certification Seal</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="principles" id="principles">
+        <div class="tag">Our Principles</div>
+        <h2>We are Committed to Protecting Our Stakeholders</h2>
+        <p>At CGA transparency, integrity, and regulatory compliance are at the core of our operations. As a responsible and forward-thinking regulator, we are dedicated to ensuring that our operators adhere to the highest standards of regulatory compliance.</p>
+        <div class="cards">
+            <div class="card">
+                <div class="icon">&#128221;</div>
+                <h3>Adherence to Regulations</h3>
+                <p>Our operators are meticulously trained and regularly updated on relevant industry regulations. We have implemented robust internal processes to ensure that every aspect of our operations aligns with local and international regulatory requirements.</p>
+            </div>
+            <div class="card">
+                <div class="icon">&#127891;</div>
+                <h3>Continuous Training and Education</h3>
+                <p>We invest in ongoing training programs to keep our team abreast of the latest regulatory developments. This proactive approach ensures that our operators are well-equipped to navigate the evolving landscape of compliance.</p>
+            </div>
+            <div class="card">
+                <div class="icon">&#128200;</div>
+                <h3>Transparent Reporting</h3>
+                <p>Transparency is paramount in maintaining the trust of our stakeholders. We provide clear and comprehensive reporting on our regulatory compliance efforts, giving our operators and other stakeholders insight into our commitment to upholding industry standards.</p>
+            </div>
+            <div class="card">
+                <div class="icon">&#9878;</div>
+                <h3>Ethical Conduct</h3>
+                <p>We uphold the highest ethical standards in all our business dealings. Our commitment to ethical conduct extends beyond mere compliance, emphasizing the importance of integrity and responsible corporate citizenship.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Curaçao Gaming Authority. All rights reserved. | <a href="mailto:info@cga.mba">info@cga.mba</a></p>
+    </footer>
+</body>
+</html>

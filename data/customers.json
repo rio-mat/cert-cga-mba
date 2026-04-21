@@ -1,0 +1,24 @@
+{
+  "ZXlKc0xDSmhJam9pTWpFME9TSXNJbUlpT2lJeE1qTWlmUQ": {
+    "domain": "matadorbet.com",
+    "companyName": "Socas International B.V.",
+    "companyNumber": "151253",
+    "address": "Chuchubiweg 17, Curaçao",
+    "contactEmail": "support@socasinternational.com",
+    "licenseNumber": "OGL/2024/1295/0544",
+    "licenseDate": "16/07/2024",
+    "status": "Active",
+    "alternateDomain": "matadorbet.com"
+  },
+  "DEMO_TOKEN_123": {
+    "domain": "examplebet.com",
+    "companyName": "Example Gaming B.V.",
+    "companyNumber": "999999",
+    "address": "Kaya Richard J. Beaujon z/n, Curaçao",
+    "contactEmail": "support@examplegaming.com",
+    "licenseNumber": "OGL/2025/0001/0001",
+    "licenseDate": "01/01/2025",
+    "status": "Active",
+    "alternateDomain": "examplebet.com"
+  }
+}
