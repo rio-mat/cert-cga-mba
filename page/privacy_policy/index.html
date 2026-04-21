@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGA - Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #f5f5f5; }
+
+        .navbar {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 18px 60px; background: #fff; border-bottom: 1px solid #e5e5e5;
+        }
+        .navbar .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .navbar .logo-icon {
+            width: 48px; height: 48px; background: #1a2744; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 800; font-size: 14px; font-family: 'Playfair Display', serif;
+        }
+        .navbar .logo-text { font-size: 24px; font-weight: 800; color: #1a2744; letter-spacing: 2px; }
+        .navbar .logo-sub { font-size: 10px; color: #555; letter-spacing: 1px; }
+        .navbar nav a {
+            text-decoration: none; color: #1a2744; font-size: 13px; font-weight: 600;
+            letter-spacing: 2px; text-transform: uppercase; margin-left: 40px;
+        }
+        .navbar nav a:hover { color: #b8972f; }
+
+        .page-header {
+            background: #1a2744; padding: 50px 60px; display: flex;
+            align-items: center; justify-content: space-between; flex-wrap: wrap;
+        }
+        .page-header h1 {
+            font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: #fff;
+        }
+        .page-header .sub { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+        .page-header .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.6); }
+        .page-header .breadcrumb a { color: rgba(255,255,255,0.8); text-decoration: none; }
+        .page-header .breadcrumb a:hover { color: #b8972f; }
+
+        .content-wrapper { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .content-box {
+            background: #fff; border-radius: 12px; padding: 50px 60px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.04); margin-bottom: 30px;
+        }
+        .content-box h2 {
+            font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+            color: #1a2744; margin: 30px 0 16px; padding-bottom: 12px;
+            border-bottom: 2px solid #b8972f;
+        }
+        .content-box h2:first-child { margin-top: 0; }
+        .content-box h3 {
+            font-size: 16px; font-weight: 700; color: #1a2744; margin: 24px 0 10px;
+        }
+        .content-box p {
+            font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 12px;
+        }
+        .content-box strong { color: #1a2744; }
+        .content-box ul, .content-box ol {
+            margin: 10px 0 16px 20px; font-size: 14px; color: #555; line-height: 2;
+        }
+        .content-box a { color: #b8972f; }
+        .contact-block {
+            background: #f8f6f0; border-left: 4px solid #b8972f; padding: 16px 20px;
+            margin: 16px 0; border-radius: 0 8px 8px 0; font-size: 14px; color: #555; line-height: 1.8;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #b8972f 0%, #c9a227 100%);
+            padding: 50px 60px 20px;
+        }
+        .footer-main {
+            display: flex; align-items: flex-start; justify-content: space-between;
+            flex-wrap: wrap; gap: 40px; padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+        .footer-logo { display: flex; align-items: center; gap: 14px; }
+        .footer-logo-icon {
+            width: 56px; height: 56px; background: #1a2744; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 800; font-size: 16px; font-family: 'Playfair Display', serif;
+        }
+        .footer-logo-text { font-size: 22px; font-weight: 800; color: #1a2744; letter-spacing: 2px; }
+        .footer-logo-sub { font-size: 9px; color: #3a3a3a; letter-spacing: 1px; }
+        .footer-brand { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #1a2744; margin-top: 12px; }
+        .footer-visit h4 { font-size: 14px; font-weight: 700; color: #1a2744; margin-bottom: 10px; }
+        .footer-visit p { font-size: 13px; color: #3a3a3a; line-height: 1.7; margin: 0; }
+        .footer-visit a { color: #1a2744; text-decoration: none; }
+        .footer-links a {
+            display: block; color: #1a2744; text-decoration: none; font-size: 14px;
+            font-weight: 600; margin-bottom: 8px;
+        }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer-copy { text-align: center; padding-top: 20px; font-size: 12px; color: #555; }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 14px 20px; }
+            .navbar nav a { margin-left: 20px; font-size: 11px; }
+            .page-header { padding: 30px 20px; }
+            .page-header h1 { font-size: 24px; }
+            .content-box { padding: 30px 20px; }
+            .footer { padding: 30px 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="/" class="logo">
+            <div class="logo-icon">CGA</div>
+            <div>
+                <div class="logo-text">CGA</div>
+                <div class="logo-sub">Curaçao Gaming Authority</div>
+            </div>
+        </a>
+        <nav>
+            <a href="/">HOME</a>
+            <a href="/page/certification_policy">CERTIFICATION POLICY</a>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <div>
+            <h1>Privacy Policy</h1>
+            <div class="sub">Curaçao Gaming Authority</div>
+        </div>
+        <div class="breadcrumb">
+            <a href="/">Home</a> / Privacy Policy
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content-box">
+            <p>The Curaçao Gaming Authority (hereinafter: 'CGA' or 'we') processes personal data in order to fulfil our tasks. CGA is currently charged with the following tasks:</p>
+            <ul>
+                <li>CGA is the regulator for the Curaçao land-based casino industry;</li>
+                <li>CGA grants, amends, revokes and suspends the licenses related to the lottery industry, as well as those for the charitable bingo and 'bon ku ne' activities;</li>
+                <li>CGA issues licensing for and supervises the Curaçao online gaming sector;</li>
+                <li>CGA is responsible for AML (Anti Money Laundering)/CFT (Counter Financing of Terrorism) supervision for the entire gaming industry operating in and from Curaçao.</li>
+            </ul>
+            <p>The concept of 'personal data' includes all information about an identified or identifiable natural person. Personal data therefore tells CGA something about you or can be associated with you, such as your name, e-mail or mailing address.</p>
+            <p>In this Privacy Statement CGA wishes to inform you among others about the use of your personal data as well as your privacy rights. Please do not hesitate to contact CGA should you have any additional questions. You will find our contact details below:</p>
+            <div class="contact-block">
+                Scharlooweg 172-174<br>
+                Willemstad<br>
+                CURAÇAO<br>
+                <a href="mailto:info@cga.mba">info@cga.mba</a><br>
+                Tel: +(599 9) 737-2299
+            </div>
+
+            <h2>Which personal data do we process?</h2>
+            <p>Depending on the relationship we have with you, we process certain personal data. We tell you more about this below.</p>
+
+            <h3>Applicants or license holders (including operators)</h3>
+            <p>In the handling of license applications, CGA will, among others, assess the integrity of the applicant, its ultimate beneficial owners or beneficiaries, its holders of a qualifying interest, its statutory or de facto directors and other key persons, who are engaged in critical activities of the applicant, such as managing directors and compliance officers.</p>
+            <p>We therefore process the following data of natural persons directly or indirectly associated with applicants or license holders, such as supervisory directors, managing or de facto directors, CEO's, ultimate beneficial owners or beneficiaries, shareholders, managers, investors and employees that perform critical roles, such as compliance officers, provided by the applicant, license holder or via a third party:</p>
+            <ul>
+                <li>Personal information such as name, first name, date of birth, gender, address, zip code, place of residence, cv's, employment history, educational attainment;</li>
+                <li>A copy of an identity document which contains a photo;</li>
+                <li>Communication data such as telephone number, email address;</li>
+                <li>Chamber of Commerce and National ID or equivalent number;</li>
+                <li>Data on administrative violations and enforcement;</li>
+                <li>Criminal data;</li>
+                <li>Financial information;</li>
+                <li>License related information and other personal data provided in the license application; and</li>
+                <li>Other relevant personal data when necessary for due diligence or supervision purposes.</li>
+            </ul>
+            <p>CGA offers a portal ('the Portal') for the application for an online gaming license pursuant to the National Ordinance on Offshore Games of Hazard (Landsverordening buitengaatse hazardspelen, P.B. 1993, no. 63) (NOOGH) by operators that wish to acquire an online gaming license directly from CGA, and for the registration of operators that are currently offering online gaming in Curaçao on the basis of a contractual agreement with an existing license holder and who wish to acquire a Curaçao online gaming license under current or future Curaçao law.</p>
+            <p>Operators that want to apply for a license should submit the required forms and documentation, containing the personal data referred to above, through the Portal.</p>
+
+            <h3>Suppliers of CGA</h3>
+            <p>We process the following (categories of) personal data of persons from whom CGA purchases products or services or who work for these suppliers:</p>
+            <ul>
+                <li>Name and address details (name, first names, initials, titles, gender, address, postal code, residence) as provided by the (contact person of the) supplier;</li>
+                <li>Results of due diligence checks, if any, of ultimate beneficial owners or beneficiaries, holders of a qualifying interest, statutory or de facto directors and other key persons;</li>
+                <li>Other contact details (telephone number, e-mail address and similar data required for communication) as provided by the (contact person of the) supplier;</li>
+                <li>Data for the purpose of placing orders or purchasing services, calculating and recording fees and expenses, making payments and collecting receivables, including the bank account number as provided by the (contact person of the) supplier; and</li>
+                <li>Other data of suppliers of which the processing is required by or necessary to comply with applicable laws or regulations, as provided by the (contact person of the) supplier or obtained from public sources, such as the Trade Register.</li>
+            </ul>
+
+            <h3>Job applicants</h3>
+            <p>In dealing with your job application, we process the following personal data provided by you or obtained via a third party, e.g. a referent or a job agency:</p>
+            <ul>
+                <li>Name and address;</li>
+                <li>Contact details, including telephone number and email address;</li>
+                <li>Gender;</li>
+                <li>Date of birth;</li>
+                <li>Photo (optional);</li>
+                <li>CV or resume (e.g. educational attainment, availability etc.);</li>
+                <li>Certificates (including a Certificate of Conduct), references and where relevant: assessment results;</li>
+                <li>Cover letter with your reasons for applying;</li>
+                <li>Whether you live and are allowed to work on Curaçao; and</li>
+                <li>References as provided by you and/or your referent, data regarding the position applied for, notes of interviews and written communication with you.</li>
+            </ul>
+
+            <h3>Third parties</h3>
+            <p>CGA may process (categories of) personal data of third parties (such as website visitors, lawyers and other advisors with whom we are in contact and who are not our suppliers, complainants):</p>
+            <ul>
+                <li>Name and address details (name, first names, initials, titles, gender, address, postal code, residence), insofar as known to CGA;</li>
+                <li>Other contact details (telephone number, e-mail address and similar data necessary for communication), insofar as known to CGA;</li>
+                <li>Personal data contained in a complaint and in the correspondence with complainant;</li>
+                <li>Information collected on visits to our websites including IP-address, as specified in our Cookie Statement; and</li>
+                <li>Data relating to electronic messages originating from or intended for third parties and data required to maintain contact with these third parties.</li>
+            </ul>
+
+            <h2>On the basis of which legal processing grounds and for which purposes do we process your personal data?</h2>
+            <p>CGA processes your personal data on the basis of one or more of the following legal processing grounds:</p>
+            <ol type="a">
+                <li>If this is necessary for the performance of an agreement to which you are a party or to perform precontractual acts at your request;</li>
+                <li>If this is necessary for compliance with a legal obligation to which CGA is subject;</li>
+                <li>If this is necessary to justify our legitimate interests or the interests of a third party;</li>
+                <li>Your consent;</li>
+                <li>If this is necessary for the proper performance of our public tasks.</li>
+            </ol>
+            <p>If CGA processes your personal data on the basis of your consent, CGA will ask you for it separately. You may withdraw your consent at any time. CGA draws your attention to the fact that the withdrawal of your consent does not affect the lawfulness of the processing of your personal data prior to the withdrawal of your consent.</p>
+            <p>CGA uses the above personal data for the purposes stated below, in respect of which we have indicated for each purpose on the basis of which of the abovementioned legal processing grounds (a to e above) CGA does so. If the processing is based on the principle of 'legitimate interest', we also briefly explain this interest. If you have any specific questions in this respect, please do not hesitate to contact us.</p>
+
+            <h3>Purposes with corresponding processing grounds:</h3>
+            <ul>
+                <li>To handle applications for licenses or other permissions and for supervision purposes (e);</li>
+                <li>For the administration of CGA, including the calculation or recording of fees or benefits, income and expenses, the payment and collection of claims (a, b and c);</li>
+                <li>To handle your job application (a, b and c);</li>
+                <li>To be able to deal with any questions, comments, complaints and disputes (a, b and c);</li>
+                <li>To maintain contact and communicate with you (a, b, c);</li>
+                <li>For placing orders or purchasing services (a, b and c);</li>
+                <li>For conducting audits and other internal controls (a, b and c);</li>
+                <li>To provide you access to our websites, for the security of our websites and to generate statistics regarding the use of our website (a, b and c);</li>
+                <li>To comply with our legal and statutory obligations and compliance with court orders (b, c).</li>
+            </ul>
+
+            <h2>To whom does CGA provide your personal data?</h2>
+            <p>CGA observes the greatest care and restraint when it comes to providing personal data to third parties.</p>
+            <p>CGA does not provide your personal data to third parties, unless this is necessary for the proper performance of the purposes set out in this Privacy Statement, if the law requires us to do so or if you have provided your consent to this end.</p>
+            <p>The performance of our public tasks may require that CGA shares information, including personal data, with other governmental organizations, including local or foreign regulators and public prosecutors.</p>
+            <p>CGA can share your personal data with:</p>
+            <ul>
+                <li>Suppliers (for example software suppliers, parties that assist in carrying out assessments of license applications, bailiffs, courier services, translation agencies, accountants, etc.);</li>
+                <li>Courts and governmental organizations, e.g. local or foreign regulators and public prosecutors;</li>
+                <li>Other parties where required by law or with your consent.</li>
+            </ul>
+
+            <h2>How long does CGA retain your personal data?</h2>
+            <p>CGA does not retain your personal data in an identifiable form for longer than is necessary to achieve the purposes included in this Privacy Statement, also taking into account statutory retention obligations and CGA's legitimate interests, e.g. for the handling of incidents and/or legal disputes.</p>
+
+            <h2>Security</h2>
+            <p>CGA has taken appropriate technical and organizational measures to secure your personal data against unauthorized or unlawful processing and against loss, destruction, damage, modification or publication. If you have any questions about the security of your personal data, or if you suspect or see signs of misuse, please contact CGA via: <a href="mailto:info@cga.mba">info@cga.mba</a>.</p>
+
+            <h2>Your privacy rights</h2>
+            <p>You have the following rights in respect of the processing of your personal data by CGA:</p>
+            <ul>
+                <li>The right to know whether CGA processes your personal data and if so, the right to access your personal data and to receive information about the processing of your personal data;</li>
+                <li>The right to rectification of your personal data if these are incorrect or incomplete;</li>
+                <li>The right to have your personal data deleted;</li>
+                <li>The right to object to the processing of your personal data or to limit the processing of your personal data;</li>
+                <li>The right to withdraw your consent for the processing of your personal data, if the processing is based on your consent;</li>
+                <li>The right to request withdrawal of personal information.</li>
+            </ul>
+            <p>To exercise your rights, you can contact us via the contact details as mentioned above.</p>
+            <p>In order to prevent CGA disclosing information to the wrong person, CGA may ask you for additional information to verify your identity. In principle, CGA will inform you whether CGA can comply with your request, within one month after receipt. In specific cases, for example when it concerns a complex request, this term may be extended by two months.</p>
+
+            <h2>Complaints</h2>
+            <p>If you have a complaint about the processing of your personal data by CGA, please contact CGA via: <a href="mailto:info@cga.mba">info@cga.mba</a>.</p>
+
+            <h2>Amendments</h2>
+            <p>This Privacy Statement was last amended on 25 October 2023. CGA reserves the right to amend this Privacy Statement. The most recent version of this Privacy Statement will always be posted on our websites. If substantial amendments are made that could have a significant impact on one or more of the data subjects involved, CGA will endeavour to inform those data subjects directly.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div>
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">CGA</div>
+                    <div>
+                        <div class="footer-logo-text">CGA</div>
+                        <div class="footer-logo-sub">Curaçao Gaming Authority</div>
+                    </div>
+                </div>
+                <div class="footer-brand">Curaçao Gaming Authority</div>
+            </div>
+            <div class="footer-visit">
+                <h4>Visit</h4>
+                <p>Scharlooweg 172-174<br>Willemstad<br>Curaçao</p>
+                <p style="margin-top:12px;">+(599 9) 737-2299<br><a href="mailto:info@cga.mba">info@cga.mba</a></p>
+            </div>
+            <div class="footer-links">
+                <a href="/page/privacy_policy" style="color:#1a2744;font-weight:600;">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>Copyright &copy; 2026 Curaçao Gaming Authority</p>
+        </div>
+    </footer>
+</body>
+</html>
