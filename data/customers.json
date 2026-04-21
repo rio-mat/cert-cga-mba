@@ -10,15 +10,15 @@
     "status": "Active",
     "alternateDomain": "matadorbet.com"
   },
-  "DEMO_TOKEN_123": {
-    "domain": "examplebet.com",
-    "companyName": "Example Gaming B.V.",
-    "companyNumber": "999999",
-    "address": "Kaya Richard J. Beaujon z/n, Curaçao",
-    "contactEmail": "support@examplegaming.com",
-    "licenseNumber": "OGL/2025/0001/0001",
-    "licenseDate": "01/01/2025",
+  "mirabet_2025_cga": {
+    "domain": "mirabet.com",
+    "companyName": "Mirax International B.V.",
+    "companyNumber": "162847",
+    "address": "Pareraweg 45, Willemstad, Curaçao",
+    "contactEmail": "info@mirabet111.com",
+    "licenseNumber": "OGL/2025/1735/0334",
+    "licenseDate": "22/04/2025",
     "status": "Active",
-    "alternateDomain": "examplebet.com"
+    "alternateDomain": "mirabet.com"
   }
 }
