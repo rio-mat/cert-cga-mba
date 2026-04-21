@@ -179,6 +179,10 @@
                         <div class="info-value" id="infoLicense"></div>
                     </div>
                     <div class="info-row">
+                        <div class="info-label">License Type</div>
+                        <div class="info-value highlight" id="infoLicenseType"></div>
+                    </div>
+                    <div class="info-row">
                         <div class="info-label">Alternate Designation</div>
                         <div class="info-value highlight" id="infoAlternate"></div>
                     </div>
@@ -233,6 +237,25 @@
                 document.getElementById('infoDomain').textContent = customer.domain;
                 document.getElementById('infoLicense').textContent = customer.licenseNumber;
                 document.getElementById('infoAlternate').textContent = customer.alternateDomain;
+
+                // License type badge
+                const licenseType = customer.licenseType || 'B2C';
+                document.getElementById('infoLicenseType').textContent = licenseType;
+                const sealBadge = document.querySelector('.seal-badge');
+                if (licenseType === 'B2B') {
+                    sealBadge.style.background = '#1a2744';
+                }
+
+                // Update certificate text for B2B
+                if (licenseType === 'B2B') {
+                    document.querySelector('.cert-body').innerHTML =
+                        'This is to certify that <strong>' + customer.domain + '</strong> is operated by ' +
+                        '<strong>' + customer.companyName + '</strong>, a company incorporated under the laws of Curaçao ' +
+                        'with Company Number <strong>' + customer.companyNumber + '</strong> and licensed by the ' +
+                        'Curaçao Gaming Authority to provide B2B gaming services to other licensed operators under license number ' +
+                        '<strong>' + customer.licenseNumber + '</strong> in accordance with the National Ordinance on Games of Chance ' +
+                        '(Landsverordening op de kansspelen, P.B. 2024, no. 157).';
+                }
 
                 document.title = 'CGA - Certificate: ' + customer.domain;
 

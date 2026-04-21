@@ -31,5 +31,17 @@
     "licenseDate": "22/04/2025",
     "status": "Active",
     "alternateDomain": "matplay.net"
+  },
+  "eyJpdiI6IjY1M2MzOWEyY2IyMzAxN2NhMTk0MTNjNDRiNjgzNzI5ZjM2NjM3MzMwNGE3YjhhMzQyMWUwNWFlNTdmYTJlNTgiLCJ2YWx1ZSI6IjY3ZmRkY2E1ZGEwN2VjNjYzYzgxYmQxZmE1MmI4MzRjY2Q5MzQwZWU5ZjU2NDRkMGNlZTdmODg4NDc1NWMxMGNmZGU0MmEzZTlhZGU0NzRjMzJkOGRiNjZlZTA2MzlkZTY2MDU0NTU2Yzg0NDBmOTlmMjU2ZGM2ZWNmYjZiNWRmIiwibWFjIjoiNmNkNTU5MDU1M2Y2OWZhY2MxOTk5YWVjYTUzMGQ0MzMxZThlYzI1YWE5NDE4NDEzYWIwZGZhNTBjZTliM2YwNDM5YzNmNTg5NjAxMzI0YjMxZTg1ZDNmNjQxNGViMzQxIiwidGFnIjoiIn0": {
+    "domain": "matgaming.net",
+    "companyName": "Matgaming Technologies B.V.",
+    "companyNumber": "183261",
+    "address": "Kaya Flamboyan 9, Willemstad, Curaçao",
+    "contactEmail": "info@matgaming.net",
+    "licenseNumber": "OGL/2025/2104/0189",
+    "licenseDate": "22/04/2025",
+    "status": "Active",
+    "alternateDomain": "matgaming.net",
+    "licenseType": "B2B"
   }
 }
